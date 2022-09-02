@@ -15,6 +15,7 @@ public static class PersistenceServiceRegistration
         services.AddDbContext<BaseDbContext>(options =>
         {
             options.UseSqlServer(configuration.GetConnectionString("kodlamaioDevsConnectionString"));
+            options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
         });
         services.AddScoped<IProgrammingLanguageRepository, ProgrammingLanguageRepository>();
         return services;
