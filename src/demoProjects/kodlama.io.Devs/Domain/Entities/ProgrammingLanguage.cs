@@ -1,10 +1,12 @@
-﻿using Core.Persistence.Repositories;
+﻿using System.Security.AccessControl;
+using Core.Persistence.Repositories;
 
 namespace Domain.Entities;
 
 public class ProgrammingLanguage : Entity
 {
     public string Name { get; set; }
+    public virtual ICollection<Technology> Technologies { get; set; }
 
     public ProgrammingLanguage()
     {
