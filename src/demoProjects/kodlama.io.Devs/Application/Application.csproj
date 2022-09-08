@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Features\Auth\Commands\AuthRegister\" />
+    <Folder Include="Features\Auth\Constants\" />
+    <Folder Include="Features\Auth\Dtos\" />
+    <Folder Include="Features\Auth\Models\" />
+    <Folder Include="Features\Auth\Profiles\" />
+    <Folder Include="Features\Auth\Queries\" />
+    <Folder Include="Features\Auth\Rules\" />
     <Folder Include="Features\ProgrammingLanguages\Commands\DeleteProgrammingLanguage\" />
     <Folder Include="Features\ProgrammingLanguages\Commands\UpdateProgrammingLanguage\" />
     <Folder Include="Features\ProgrammingLanguages\Constants\" />
@@ -24,7 +31,6 @@
     <Folder Include="Features\Technology\Queries\GetListTechnologyByDynamic\" />
     <Folder Include="Features\Technology\Queries\GetByIdTechnology\" />
     <Folder Include="Features\Technology\Rules\" />
-    <Folder Include="Services\Repositories\" />
   </ItemGroup>
 
   <ItemGroup>
