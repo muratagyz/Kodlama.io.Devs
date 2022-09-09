@@ -7,6 +7,7 @@ using Core.Application.Pipelines.Validation;
 using FluentValidation;
 using Application.Features.ProgrammingLanguages.Rules;
 using Application.Features.Technology.Rules;
+using Core.Application.Pipelines.Authorization;
 
 namespace Application;
 
@@ -24,6 +25,7 @@ public static class ApplicationServiceRegistration
 
         services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
+        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(AuthorizationBehavior<,>));
 
         return services;
     }
