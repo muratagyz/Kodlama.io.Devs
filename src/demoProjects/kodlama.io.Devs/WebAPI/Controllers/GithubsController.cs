@@ -6,10 +6,12 @@ using Application.Features.Github.Models;
 using Application.Features.Github.Queries.GetByIdGithub;
 using Application.Features.Github.Queries.GetListGithub;
 using Core.Application.Requests;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class GithubsController : BaseController
