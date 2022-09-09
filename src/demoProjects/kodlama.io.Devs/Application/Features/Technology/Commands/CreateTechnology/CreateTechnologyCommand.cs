@@ -29,9 +29,9 @@ public class CreateTechnologyCommand : IRequest<CreatedTechnologyDto>
             await _technologyBusinessRules.TechnologyNameCanNotBeDuplicatedWhenInserted(request.Name);
             await _technologyBusinessRules.ProgrammingLanguageShouldExistWhenRequested(
                 request.ProgrammingLanguageId);
-            Domain.Entities.Technology mappedteTechnology = _mapper.Map<Domain.Entities.Technology>(request);
-            Domain.Entities.Technology createdtTechnology = await _technologyRepository.AddAsync(mappedteTechnology);
-            CreatedTechnologyDto createdTechnologyDtoDto = _mapper.Map<CreatedTechnologyDto>(createdtTechnology);
+            Domain.Entities.Technology mappedTechnology = _mapper.Map<Domain.Entities.Technology>(request);
+            Domain.Entities.Technology createdTechnology = await _technologyRepository.AddAsync(mappedTechnology);
+            CreatedTechnologyDto createdTechnologyDtoDto = _mapper.Map<CreatedTechnologyDto>(createdTechnology);
             return createdTechnologyDtoDto;
         }
     }

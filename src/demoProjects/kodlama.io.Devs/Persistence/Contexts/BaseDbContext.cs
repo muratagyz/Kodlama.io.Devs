@@ -14,6 +14,7 @@ public class BaseDbContext : DbContext
     public DbSet<User> Users { get; set; }
     public DbSet<OperationClaim> OperationClaims { get; set; }
     public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
+    public DbSet<Github> Githubs { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -69,6 +70,15 @@ public class BaseDbContext : DbContext
             u.HasOne(u => u.OperationClaim);
         });
 
+        modelBuilder.Entity<Github>(g =>
+            {
+                g.ToTable("Githubs").HasKey(g => g.Id);
+                g.Property(g => g.Id).HasColumnName("Id");
+                g.Property(g => g.ProfileUrl).HasColumnName("ProfileUrl");
+                g.Property(g => g.UserId).HasColumnName("UserId");
+            }
+        );
+
 
         ProgrammingLanguage[] programmingLanguagesEntitySeeds = { new(1, "C#"), new(2, "Java"), new(3, "Python") };
         modelBuilder.Entity<ProgrammingLanguage>().HasData(programmingLanguagesEntitySeeds);
@@ -78,5 +88,8 @@ public class BaseDbContext : DbContext
 
         OperationClaim[] operationClaimsEntitySeeds = { new(1, "Admin"), new(2, "User") };
         modelBuilder.Entity<OperationClaim>().HasData(operationClaimsEntitySeeds);
+
+        Github[] githubEntitySeeds = { new(1,1, "https://github.com/muratagyz") };
+        modelBuilder.Entity<Github>().HasData(githubEntitySeeds);
     }
 }

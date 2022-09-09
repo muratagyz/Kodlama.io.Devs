@@ -14,6 +14,15 @@
     <Folder Include="Features\Auth\Profiles\" />
     <Folder Include="Features\Auth\Queries\" />
     <Folder Include="Features\Auth\Rules\" />
+    <Folder Include="Features\Github\Commands\CreateGithub\" />
+    <Folder Include="Features\Github\Commands\DeleteGithub\" />
+    <Folder Include="Features\Github\Commands\UpdateGithub\" />
+    <Folder Include="Features\Github\Constants\" />
+    <Folder Include="Features\Github\Models\" />
+    <Folder Include="Features\Github\Profiles\" />
+    <Folder Include="Features\Github\Queries\GetListGithub\" />
+    <Folder Include="Features\Github\Queries\GetByIdGithub\" />
+    <Folder Include="Features\Github\Rules\" />
     <Folder Include="Features\ProgrammingLanguages\Commands\DeleteProgrammingLanguage\" />
     <Folder Include="Features\ProgrammingLanguages\Commands\UpdateProgrammingLanguage\" />
     <Folder Include="Features\ProgrammingLanguages\Constants\" />

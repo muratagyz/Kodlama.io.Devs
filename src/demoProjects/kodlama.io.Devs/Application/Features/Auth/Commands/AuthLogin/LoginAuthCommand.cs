@@ -1,6 +1,5 @@
 ﻿using Application.Features.Auth.Rules;
 using Application.Services.Repositories;
-using AutoMapper;
 using Core.CrossCuttingConcerns.Exceptions;
 using Core.Persistence.Paging;
 using Core.Security.Entities;
@@ -19,15 +18,13 @@ public class LoginAuthCommand : IRequest<AccessToken>
     public class AuthLoginCommandHandler : IRequestHandler<LoginAuthCommand, AccessToken>
     {
         private readonly IUserRepository _userRepository;
-        private readonly IMapper _mapper;
         private readonly ITokenHelper _tokenHelper;
         private readonly AuthBusinessRules _authBusinessRules;
         private readonly IUserOperationClaimRepository _userOperationClaimRepository;
 
-        public AuthLoginCommandHandler(IUserRepository userRepository, IMapper mapper, ITokenHelper tokenHelper, AuthBusinessRules authBusinessRules, IUserOperationClaimRepository userOperationClaimRepository)
+        public AuthLoginCommandHandler(IUserRepository userRepository, ITokenHelper tokenHelper, AuthBusinessRules authBusinessRules, IUserOperationClaimRepository userOperationClaimRepository)
         {
             _userRepository = userRepository;
-            _mapper = mapper;
             _tokenHelper = tokenHelper;
             _authBusinessRules = authBusinessRules;
             _userOperationClaimRepository = userOperationClaimRepository;

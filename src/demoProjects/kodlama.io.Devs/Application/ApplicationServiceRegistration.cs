@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 using Application.Features.Auth.Rules;
+using Application.Features.Github.Rules;
 using Core.Application.Pipelines.Validation;
 using FluentValidation;
 using Application.Features.ProgrammingLanguages.Rules;
@@ -19,6 +20,7 @@ public static class ApplicationServiceRegistration
         services.AddScoped<ProgrammingLanguageBusinessRules>();
         services.AddScoped<TechnologyBusinessRules>();
         services.AddScoped<AuthBusinessRules>();
+        services.AddScoped<GithubBusinessRules>();
 
         services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
